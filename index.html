@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodsaver</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="header">
+ 
+        <div class="logo">
+        <img class="imglogo" src="https://i.ibb.co/rQSLky2/FOODSAVER.png" alt="Logo">
+        </div>
+
+        
+        
+        <div class="tagline">
+          Custom recipes based on your leftover ingredient !
+        </div>
+    </div>
+ 
+   
+<!--  USER FORM starts    -->
+<div id="landing-page" class="">
+    <div class="user-input">
+    <!--    -->
+      <form id="recipe-form">
+        <label for="ingredient" id="label-ingred">What ingredient in your kitchen is about to go off?</label><br>
+                <input type="text" id="ingredient" required placeholder="Courgette, banana, steak, ..."><br><br>
+     <label for="exclude" id="label-exclude">Tell us an ingredient you hate...</label><br>
+     <input type="text" id="exclude" required placeholder="Onion, apple, cinnamon, ..."><br><br>
+        
+        <label for="diet" id="label-diet">What is your diet?</label><param id="diet" value="">
+    <br>
+        <div class="dietary-container">
+        <div onclick="selectDiet('vegan')" class="vegan button"><svg viewBox="0 0 1024 1024" class="home-icon-vegan">
+          <path
+            d="M1011.328 134.496c-110.752-83.928-281.184-134.034-455.91-134.034-216.12 0-392.226 75.456-483.16 207.020-42.708 61.79-66.33 134.958-70.208 217.474-3.454 73.474 8.884 154.726 36.684 242.146 94.874-284.384 359.82-507.102 665.266-507.102 0 0-285.826 75.232-465.524 308.192-0.112 0.138-2.494 3.090-6.614 8.698-36.080 48.278-67.538 103.162-91.078 165.328-39.87 94.83-76.784 224.948-76.784 381.782h128c0 0-19.43-122.222 14.36-262.79 55.89 7.556 105.858 11.306 150.852 11.306 117.678 0 201.37-25.46 263.388-80.124 55.568-48.978 86.198-114.786 118.624-184.456 49.524-106.408 105.654-227.010 268.654-320.152 9.33-5.332 15.362-14.992 16.056-25.716s-4.040-21.080-12.606-27.572z"
+          ></path>
+        </svg><p>Vegan</p></div>
+    <div class="vegetarian button" onclick="selectDiet('vegetarian')"><svg viewBox="0 0 801.1337142857142 1024" class="home-icon-vege">
+          <path
+            d="M801.143 630.286c-114.857 285.143-390.286 112.571-390.286 112.571-84.571 170.857-224 280.571-385.143 281.143-14.286 0-25.714-11.429-25.714-25.714s11.429-25.143 25.714-25.143c134.286-0.571 251.429-89.143 328-229.714-85.714 33.143-247.429 58.286-337.143-171.429 227.429-93.714 332 23.429 372 94.857 20.571-50.857 35.429-106.286 45.143-166.286 0 0-291.429 45.714-312-204.571 248.571-100 318.286 160 318.286 160 3.429-34.857 6.857-109.714 6.857-111.429 0 0-221.714-153.714-79.429-344.571 260 89.714 128 338.857 128 338.857 1.143 3.429 1.143 49.714 0 69.714 0 0 94.286-185.714 284.571-120-8.571 279.429-296 221.714-296 221.714-9.143 57.143-23.429 111.429-41.714 161.714 0 0 173.143-191.429 358.857-41.714z"
+          ></path>
+        </svg>
+        <p>Vegetarian</p></div>
+    <div value="meat" class="meat button" onclick="selectDiet('meat')"; ><svg viewBox="0 0 804.5714285714286 1024" class="home-icon4">
+          <path
+            d="M365.714 36.571v365.714c0 46.286-29.714 88-73.143 103.429v445.143c0 40-33.143 73.143-73.143 73.143h-73.143c-40 0-73.143-33.143-73.143-73.143v-445.143c-43.429-15.429-73.143-57.143-73.143-103.429v-365.714c0-20 16.571-36.571 36.571-36.571s36.571 16.571 36.571 36.571v237.714c0 20 16.571 36.571 36.571 36.571s36.571-16.571 36.571-36.571v-237.714c0-20 16.571-36.571 36.571-36.571s36.571 16.571 36.571 36.571v237.714c0 20 16.571 36.571 36.571 36.571s36.571-16.571 36.571-36.571v-237.714c0-20 16.571-36.571 36.571-36.571s36.571 16.571 36.571 36.571zM804.571 36.571v914.286c0 40-33.143 73.143-73.143 73.143h-73.143c-40 0-73.143-33.143-73.143-73.143v-292.571h-128c-9.714 0-18.286-8.571-18.286-18.286v-457.143c0-100.571 82.286-182.857 182.857-182.857h146.286c20 0 36.571 16.571 36.571 36.571z"
+          ></path>
+        </svg>
+        <p>Meat</p></div>
+    </div>
+    <br><br><br>
+        <button id= "getRecipes" type="submit" class="recipe-button">Find Recipe</button>
+                  
+                </form>
+    </div>
+  </div>
+
+       
+    <!-- USER FORM ends -->
+
+<!-- RECIPE DISPLAY - Final page starts -->
+            
+<div id="final-page" class="hidden">
+       <div id= "recipebox">
+       </div>
+       <div id="moreRec">
+       <button id="plus">+ Get more</button>
+       </div>
+</div>
+            
+<!-- RECIPE DISPLAY - Final page ends  -->
+       
+    <!---LEARN SECTION starts--->
+    
+<div class="learnmore-section">
+    
+    <div class="learn-content">
+        <div class="learn-more-left">
+            <h2>Tips To Avoid Foodwaste </h2>
+            <p>From proper storage techniques to creative recipe ideas for leftovers, 
+                discover how simple changes can make a big impact on reducing waste and saving money. 
+                Whether you're meal planning or learning about composting, these tips will help you become a more mindful consumer and lessen your environmental footprint.</p>
+            <button class="learn-btn">Learn More</button>
+          </div>
+          <div class="learn-more-right">
+            <!-- Placeholder image -->
+            <img src="https://i.ibb.co/YhH7jzF/salad.png" alt="salad">
+          </div>
+    </div>
+
+    
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+      <div class="social-icons">
+        <a class="social-icon" href="https://www.facebook.com/codefirstgirls" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a class="social-icon" href="https://twitter.com/CodeFirstGirls" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a class="social-icon" href="https://www.instagram.com/codefirstgirls/" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    <div class="copyright">
+      <p>&copy; 2024 Created for CFG, By Eva, Monika & Alisa</p>
+    </div>
+</footer>
+
+<!-- LEARN SECTION & LANDING PAGE ends -->
+    
+    <script src="script.js"></script> 
+</body>
+</html>
